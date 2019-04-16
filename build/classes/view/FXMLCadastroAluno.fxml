@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="306.0" prefWidth="447.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controller.FXMLCadastroAlunoController">
+   <children>
+      <Label layoutX="112.0" layoutY="55.0" text="Número" />
+      <Label layoutX="112.0" layoutY="111.0" text="Nome" />
+      <Label layoutX="112.0" layoutY="168.0" text="Sexo" />
+      <Button fx:id="btSalvar" layoutX="198.0" layoutY="242.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
+      <TextField fx:id="txtNumero" layoutX="176.0" layoutY="51.0" />
+      <TextField fx:id="txtNome" layoutX="176.0" layoutY="107.0" />
+      <RadioButton fx:id="rbM" layoutX="181.0" layoutY="160.0" mnemonicParsing="false" text="M" />
+      <RadioButton fx:id="rbF" layoutX="181.0" layoutY="196.0" mnemonicParsing="false" text="F" />
+   </children>
+</AnchorPane>

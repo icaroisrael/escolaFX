@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLVisualizarController">
+   <children>
+      <TableView fx:id="tabela" layoutX="16.0" layoutY="65.0" prefHeight="200.0" prefWidth="567.0">
+        <columns>
+          <TableColumn fx:id="colN" prefWidth="20.0" text="Nº" />
+          <TableColumn fx:id="colNome" prefWidth="75.0" text="NOME" />
+            <TableColumn fx:id="colSexo" prefWidth="75.0" text="SEXO" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </children>
+</AnchorPane>
