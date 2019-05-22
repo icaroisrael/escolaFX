@@ -34,4 +34,19 @@ public class AlunoDAO {
     
     public void pesquisar(int numero){}
     
+    
+    public String salvar(Aluno aluno){
+        try {
+            String sql = "INSERT INTO ALUNO(NUMERO, NOME, SEXO) VALUES (?, ?, ?)";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, aluno.getNumero());
+            ps.setString(2, aluno.getNome());
+            ps.setString(3, aluno.getSexo());           
+            ps.executeQuery();
+            return "Aluno cadastrado com sucesso";
+        } catch (Exception e) {
+            return "Deu erro";
+        }
+    }
+    
 }
