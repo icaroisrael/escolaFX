@@ -11,7 +11,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javax.swing.JOptionPane;
 import model.Aluno;
 import view.Palco;
 
@@ -37,21 +36,7 @@ public class FXMLCadastroAlunoController implements Initializable {
     @FXML
     private RadioButton rbM;
 
-    @FXML
-    void salvar(ActionEvent event) {
-        AlunoDAO dao = new AlunoDAO();
-        Aluno aluno = new Aluno();
-        aluno.setNumero(89);
-        aluno.setNome("Israel");
-        aluno.setSexo("M");
-        
-         Alert alert = new Alert(Alert.AlertType.WARNING);
-         alert.setHeaderText("Esse é o cabeçalho...");
-         alert.setContentText(dao.salvar(aluno));
-         alert.showAndWait();
-        Palco.telaPrincipal();
-
-    }
+    
 
     
     
@@ -66,4 +51,27 @@ public class FXMLCadastroAlunoController implements Initializable {
         // TODO
     }    
     
+    @FXML
+    void salvar(ActionEvent event) {
+        AlunoDAO dao = new AlunoDAO();
+        Aluno aluno = new Aluno();
+        aluno.setNumero(Integer.parseInt(txtNumero.getText()));
+        aluno.setNome(txtNome.getText());
+        if(rbM.isSelected()){
+            aluno.setSexo("M");
+        }else if(rbF.isSelected()){
+            aluno.setSexo("F");
+        }       
+         Alert alert = new Alert(Alert.AlertType.INFORMATION);
+         alert.setHeaderText("Cadastro de Aluno");
+         alert.setContentText(dao.salvar(aluno));
+         alert.show();
+         Palco.telaPrincipal();
+    }
+    public void limpaCampos(){
+        rbM.setSelected(false);
+        rbF.setSelected(false);
+        txtNumero.setText("");
+        txtNome.setText("");
+    }
 }

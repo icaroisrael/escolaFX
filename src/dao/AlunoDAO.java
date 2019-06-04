@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 import model.Aluno;
 
 public class AlunoDAO {
@@ -35,17 +36,32 @@ public class AlunoDAO {
     public void pesquisar(int numero){}
     
     
-    public String salvar(Aluno aluno){
+    public String salvar(Aluno aluno){        
         try {
-            String sql = "INSERT INTO ALUNO(NUMERO, NOME, SEXO) VALUES (?, ?, ?)";
+            String sql = "INSERT INTO ALUNO(NUMERO, NOME, SEXO, USER) VALUES (?, ?, ?, ?)";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, aluno.getNumero());
             ps.setString(2, aluno.getNome());
-            ps.setString(3, aluno.getSexo());           
-            ps.executeQuery();
-            return "Aluno cadastrado com sucesso";
+            ps.setString(3, aluno.getSexo());
+             ps.setInt(4, 1);
+            if(ps.executeUpdate() != 0){
+                return "Cadastrado com sucesso";
+            }else{
+                return "Erro ao cadastrar";
+            }
         } catch (Exception e) {
             return "Deu erro";
+        }
+    }
+    
+    public boolean deletar(int numero){
+        try {
+            String sql = "DELETE FROM ALUNO WHERE NUMERO = '"+numero+"'";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.execute();
+            return true;
+        } catch (Exception e) {
+            return false;
         }
     }
     

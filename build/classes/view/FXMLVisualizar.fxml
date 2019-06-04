@@ -18,5 +18,6 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
+      <Button layoutX="203.0" layoutY="311.0" mnemonicParsing="false" onAction="#btExcluir" text="Excluir" />
    </children>
 </AnchorPane>
