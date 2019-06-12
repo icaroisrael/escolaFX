@@ -1,26 +1,22 @@
-
 package view;
-
 import java.io.IOException;
 import javafx.application.Application;
-
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-
 import javafx.stage.Stage;
-
 /**
  *
  * @author Israel
  */
 public class Palco extends Application {
-   static Stage palco;
-   
- 
+   static Stage palco; //Cria um stage para as cenas
+   //Cria todas as cenas
    public static Scene sceneCadAluno;
    public static Scene sceneVisualizarAluno ;
    public static Scene scener;
+
+   
     
     @Override
     public void start(Stage stage) throws IOException{
@@ -29,17 +25,17 @@ public class Palco extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("FXMLPrincipal.fxml"));
         Parent cadAluno =        FXMLLoader.load(getClass().getResource("FXMLCadastroAluno.fxml"));
         Parent visualizarAluno = FXMLLoader.load(getClass().getResource("FXMLVisualizar.fxml"));
+        
         //Crio as scenas com os fxmls
          scener = new Scene(root, 600, 600);
          sceneCadAluno = new Scene(cadAluno, 600, 600);
          sceneVisualizarAluno = new Scene(visualizarAluno, 600, 600);
-        stage.setTitle("Tela Principal");
-        stage.setScene(scener);
-        stage.setResizable(true);
-        stage.show();
-    }
-
-    
+        
+         stage.setTitle("Tela Principal");
+         stage.setScene(scener);
+         stage.setResizable(true);
+         stage.show();
+    }    
 
     /**
      * @param args the command line arguments
@@ -62,6 +58,8 @@ public class Palco extends Application {
         palco.setTitle("Tela Principal");
         palco.setScene(scener);
     }
+    
+    
     
     
 }

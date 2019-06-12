@@ -10,14 +10,15 @@
    <children>
       <TableView fx:id="tabela" layoutX="16.0" layoutY="65.0" prefHeight="200.0" prefWidth="567.0">
         <columns>
-          <TableColumn fx:id="colN" prefWidth="20.0" text="Nº" />
-          <TableColumn fx:id="colNome" prefWidth="75.0" text="NOME" />
-            <TableColumn fx:id="colSexo" prefWidth="75.0" text="SEXO" />
+          <TableColumn fx:id="colN" maxWidth="350.0" prefWidth="30.0" text="Nº" />
+          <TableColumn fx:id="colNome" prefWidth="260.0" text="NOME" />
+            <TableColumn fx:id="colSexo" maxWidth="350.0" prefWidth="30.0" text="SEXO" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
       <Button layoutX="203.0" layoutY="311.0" mnemonicParsing="false" onAction="#btExcluir" text="Excluir" />
+      <Button layoutX="285.0" layoutY="311.0" mnemonicParsing="false" onAction="#btAlterar" text="Alterar" />
    </children>
 </AnchorPane>

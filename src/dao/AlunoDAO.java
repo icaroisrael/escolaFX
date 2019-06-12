@@ -4,9 +4,9 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JOptionPane;
 import model.Aluno;
 
 public class AlunoDAO {
@@ -62,6 +62,19 @@ public class AlunoDAO {
             return true;
         } catch (Exception e) {
             return false;
+        }
+    }
+    
+    public void atualizar(Aluno aluno){
+        try {
+            String sql = "UPDATE ALUNO SET NOME = ?, SEXO = ? WHERE NUMERO = ?";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, aluno.getNome());
+            ps.setString(2, aluno.getSexo());
+            ps.setInt(3, aluno.getNumero());
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
     
